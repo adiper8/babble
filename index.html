@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     <!--Babble header and logo -->
     <header class="logo">
         <h1 aria-hidden="true" class="u-hidden">Babble talk freely.</h1>
-        <img alt="logo" src="images/logo.png">
+        <img alt="Babble's logo" src="images/logo.png">
     </header>
 
     <nav></nav>
@@ -44,6 +44,7 @@
         <form id="sbmt-form" class="Container-submitForm js-submitForm" action="http://localhost:9000/messages" method="POST">
             <div id="id-grow" class="Growable js-growable">
                 <pre><span class="js-clone"></span><br></pre>
+                <label for="txt-message" aria-hidden="true" class="u-hidden">txt-message</label>
                 <textarea id="txt-message" name="message" onKeyPress="enterpressalert(event, this)"></textarea>
             </div>
             <div class="submitButtonWrap">
