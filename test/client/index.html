@@ -1,0 +1,41 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Mocha Tests</title>
+      <link rel="stylesheet" href="../../node_modules/mocha/mocha.css">
+    </head>
+    <body>
+
+        <div id="mocha"></div>
+        <!-- Necessary test elements -->
+        <div style="visibility: hidden; display: none;">
+            <div id="modalOverlay" class="Modal-overlay js-Modal-overlay"></div>  
+            <div id="registerModal" class="Modal js-Modal"></div>
+            <form id="register">
+                <input name="fullName" type="fullname" />
+                <input name="email" type="email" />
+            </form>
+            <div id="stats-users"></div>
+            <div id="stats-messages"></div>
+            <ol id = "id-msgList"></ol>
+            <form id="sbmt-form" class="Container-submitForm js-submitForm">
+                    <div class="Growable js-growable">
+                         <textarea style="display:none;"></textarea>
+                    </div>
+            </form>
+        </div>
+            
+        <script src="../../node_modules/mocha/mocha.js"></script>
+        <script src="../../node_modules/chai/chai.js"></script>
+        <script src="../../node_modules/sinon/pkg/sinon.js"></script>
+        
+        <script>
+             mocha.setup('bdd')
+        </script>
+        <script type="text/javascript" src="../../client/scripts/main.js"></script>
+        <script type="text/javascript" src="test.js"></script>
+        <script>
+            mocha.run();
+        </script>
+    </body>
+    </html>

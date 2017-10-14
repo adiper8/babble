@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Vegans - Babble</title>
+        <!-- CSS file for styling  -->
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+    </head>
+    <body>   
+    
+    <!--Babble header and logo -->
+    <header class="logo">
+        <h1 aria-hidden="true" class="u-hidden">Babble talk freely.</h1>
+        <img alt="logo" src="images/logo.png">
+    </header>
+
+    <nav></nav>
+    
+    <!--right area for chat content -->
+    <main id="main" class="Container">
+        <!-- stats and room name title -->
+        <div class='Container-title'>
+            <div class="Container-title-roomName">Vegans</div>
+            <dl class="Container-title-stats">
+                <dt class="u-hidden" aria-hidden="true">Messages number</dt> 
+                    <dd class='Container-title-stats-element'>
+                        <img alt="" class='u-verticalMiddle' src="images/cmessages.png">
+                        <span id="stats-messages" class='u-verticalMiddle'>0</span>
+                    </dd>
+                <dt class="u-hidden" aria-hidden="true">Users number</dt>
+                    <dd class='Container-title-stats-element'>
+                        <img alt="" class='u-verticalMiddle' src="images/cusers.png">
+                        <span id="stats-users" class='u-verticalMiddle'>0</span>
+                    </dd>     
+            </dl>
+        </div>
+        <!-- chat messages -->
+        <div class="u-marg"></div>
+        <ol id = "id-msgList" class = "msgList js-msgList"></ol>
+        <div class="u-marg"></div>
+        <!-- submit form for sending new messages -->
+        <form id="sbmt-form" class="Container-submitForm js-submitForm" action="http://localhost:9000/messages" method="POST">
+            <div id="id-grow" class="Growable js-growable">
+                <pre><span class="js-clone"></span><br></pre>
+                <textarea id="txt-message" name="message" onKeyPress="enterpressalert(event, this)"></textarea>
+            </div>
+            <div class="submitButtonWrap">
+                <button type="submit" class="submitButton" aria-label="submit"></button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Modal view for registring -->
+    <div id="modalOverlay" class="Modal-overlay js-Modal-overlay"></div>  
+        <div id="registerModal" class="Modal js-Modal">
+            <form id="register" action="http://localhost:9000/register" method="POST">
+                <h2 class="Modal-title">Who are you?</h2>
+                <div class="Modal-inputWrap">
+                    <label for="id-fullName">Full name:</label>
+                    <input class="input" id="id-fullName" name="fullName" type="text" required />
+                </div>
+                <div class="Modal-inputWrap">
+                    <label for="id-email">Email:</label>
+                    <input class="input" id="id-email" name="email" type="email" required />
+                </div>
+                <div class="Modal-Buttons">
+                    <input type="button" class="Button Anonymous" onClick="registerHandle(false)" value="Stay Anonymous" />
+                    <input type="button" class="Button Save" onClick="registerHandle(true)" value="Save" />
+                </div>
+            </form>
+        </div>
+    
+        <script src="scripts/main.js"></script> 
+    </body>
+    </html>
+    
+    
