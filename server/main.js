@@ -270,4 +270,26 @@ var server =  http.createServer(function (request, response) {
 }).listen(9000);
 console.log('Server running.');
 
+//Avoid from timeout response after 2 minuts
+setInterval(function() {
+    
+    //return all get messages responses to clients
+    while(clients.length > 0) {
+        var client = clients.pop();
+        client.writeHead(200, { "Content-Type": "text/json" });
+        client.end(JSON.stringify({
+        count: messages.getMsgsLength(),
+        isDelete: false,
+        append: []
+        }));
+    }
+
+    //return all get stats responses to clients
+    while (clientsStats.length > 0) {
+        var client = clientsStats.pop();
+        client.writeHead(200, {"Content-Type": "application/json"});
+        client.end(JSON.stringify({status: true}));
+    }
+}, 120000);
+
 module.exports = {server};
