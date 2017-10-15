@@ -270,7 +270,7 @@ var server =  http.createServer(function (request, response) {
 }).listen(9000);
 console.log('Server running.');
 
-//Avoid from timeout response after 2 minuts
+//Avoid from timeout response after 2 minutes
 setInterval(function() {
     
     //return all get messages responses to clients
